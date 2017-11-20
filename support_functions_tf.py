@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 # -*- coding: utf-8 -*-
 """
 Created on Fri Oct 27 13:36:49 2017
@@ -15,21 +15,7 @@ from pdb import set_trace as bp
 
 
 
-x=tf.placeholder(dtype=tf.int64,name="x")
 
-a=tf.constant(10,dtype=tf.int64,name="a")
-b=tf.constant(10,dtype=tf.int64,name="b")
-z=tf.Variable(a*b,name="z")
-
-y=x*2
-
-
-
-init=tf.global_variables_initializer()
-
-with tf.Session() as session:
-    session.run(init)
-    print(session.run(y*z,feed_dict={x:3}))
     
 def sigmoid(z):
     
@@ -95,10 +81,8 @@ def initialize_parameters(layers_dims):
     tf.set_random_seed(1)
     L=len(layers_dims)
     parameters={}
-    #with tf.variable_scope(name=None) as scope:
-        #scope.reuse_variables()
+
     for i in range(L-1):
-        #parameters["W"+str(i+1)] = tf.get_variable("W1",[25,12288],initializer=tf.contrib.layers.xavier_initializer(seed=1))
         parameters["W"+str(i+1)] = tf.get_variable("W"+str(i+1),[layers_dims[i+1],layers_dims[i]],initializer=tf.contrib.layers.xavier_initializer(seed=1))
         parameters["b"+str(i+1)] = tf.get_variable("b"+str(i+1),[layers_dims[i+1],1],initializer=tf.zeros_initializer())
         
@@ -216,15 +200,6 @@ def model(X_train, Y_train, X_test, Y_test,layers_dims, learning_rate = 0.0001,
         
         return parameters
 
-
-
-
-#with tf.Session() as sess:
-#    X, Y = create_placeholders(12288, 6)
-#    parameters = initialize_parameters(layers_dims)
-#    Z3,_ = forward_propagation(X, parameters)
-#    cost = compute_cost(Z3, Y)
-#    print("cost = " + str(cost))
 
 
     
