@@ -1,0 +1,13 @@
+{
+    "folders":
+    [
+        {
+            "follow_symlinks": true,
+            "path": "/Users/asejouk/Machine_Learning_Code/Improving Deep Neural Networks/Week3"
+        }
+    ],
+    "settings":
+    {
+        "python_interpreter": "/anaconda3/envs/tensorflow_test/bin/python"
+    }
+}
