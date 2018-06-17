@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 # -*- coding: utf-8 -*-
 """
 Created on Sat Oct 28 19:37:34 2017
@@ -8,7 +8,7 @@ Created on Sat Oct 28 19:37:34 2017
 
 
 
-
+from model.support_functions_tf import *
 
 import numpy as np
 import matplotlib.pyplot as plt
